@@ -12,13 +12,11 @@ var cssnano = require('gulp-cssnano');
 gulp.task('inject', function () {
   return gulp.src('index.html', {cwd: './app'})
     .pipe(inject(
-      gulp.src('**/*.js', {cwd: './app'}), {
-        read: false,
+      gulp.src('**/*.js', {cwd: './app', read: false}), {
         relative: true
       }))
     .pipe(inject(
-      gulp.src('**/*.css', {cwd: './app'}), {
-        read: false,
+      gulp.src('**/*.css', {cwd: './app', read: false}), {
         relative: true
       }))
     .pipe(gulp.dest('./app'));
